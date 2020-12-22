@@ -8,7 +8,12 @@ This is the latest porto theme templates for the Magefan Blog
 
 
 ## Installation Instruction
-https://magefan.com/blog/magento2-blog-extension-installation
+Navigate to the Magento 2 root folder and run this CLI commands
+```
+wget -O magefan-blog-porto-theme-install.sh https://raw.githubusercontent.com/magefan/module-blog-porto-theme/main/install.sh
+bash magefan-blog-porto-theme-install.sh
+rm magefan-blog-porto-theme-install.sh
+```
 
 ## Magento 2 Blog Management
 * [How to Create Blog Post?](https://magefan.com/blog/new-blog-post-in-magento-2)
