@@ -5,7 +5,7 @@ wget -O magefan-blog-porto-theme.zip https://github.com/magefan/module-blog-port
 unzip magefan-blog-porto-theme.zip -d magefan-blog-porto-theme
 rm magefan-blog-porto-theme/install.sh
 cd var
-mkdir backup
+mkdir -p backup
 cd ..
 mv app/design/frontend/Smartwave/porto/Magefan_Blog "var/backup/Magefan_Blog_old_`date`"
 mv magefan-blog-porto-theme app/design/frontend/Smartwave/porto/Magefan_Blog
