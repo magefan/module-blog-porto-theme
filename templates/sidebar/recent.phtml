@@ -1,0 +1,58 @@
+
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog sidebar posts list template
+ *
+ * @var $block \Magefan\Blog\Block\Post\PostList\AbstractList
+ */
+?>
+
+<?php
+	$_postCollection = $block->getPostCollection();
+?>
+<?php if ($_postCollection->count()) { ?>
+<div class="widget block block-<?= $block->escapeHtml(str_replace('_', '-', $block->getWidgetKey())) ?> block-list-posts">
+    <div class="block-title title">
+        <strong><?= $block->escapeHtml(__($block->getBlockTitle() ?: 'Recent Posts')) ?></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+    	<?php foreach ($_postCollection as $post) { ?>
+            <?php
+                $_postUrl = $block->escapeUrl($post->getPostUrl());
+                $_postName = $block->escapeHtml($post->getTitle());
+            ?>
+            <li class="clearfix">
+                <?php $featuredImage = $post->getFeaturedListImage() ?: $post->getFeaturedImage(); ?>
+                <?php if ($featuredImage): ?>
+                    <?php
+                        $featuredImgAlt = $post->getData('featured_list_img_alt') ?: $post->getData('featured_img_alt');
+                        if (!$featuredImgAlt) {
+                            $featuredImgAlt =  $_postName;
+                        }
+                    ?>
+                    <div class="post-image">
+                        <img src="<?= $block->escapeHtml($featuredImage); ?>" alt=""/>
+                    </div>
+                <?php endif; ?>
+                <a class="post-item-link" title="<?= $_postName ?>" href="<?= $_postUrl ?>">
+                    <?= $_postName ?>
+                </a>
+                <?php if ($post->isPublishDateEnabled()) { ?>
+                    <div class="post-time"><?= $block->escapeHtml($post->getPublishDate()); ?></div>
+                <?php } ?>
+            </li>
+
+        <?php } ?>
+        </ul>
+    </div>
+</div>
+<?php } ?>
