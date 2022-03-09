@@ -1,5 +1,8 @@
 # [Magento 2 Blog Extension](https://magefan.com/magento2-blog-extension) template files for Porto Theme
 
+<img width="150" height="100" src="https://magefan.com/media/wysiwyg/made_in_ukraine.jpg">
+
+
 This is the latest porto theme templates for the Magefan Blog
 
 ## Requirements
